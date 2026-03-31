@@ -1,0 +1,55 @@
+import os 
+import time
+
+total_pesquisas = 0
+contador_familias = 0
+media_filhos = 0
+maior_salario = 9999
+menor_salario = 0
+
+opcao = 0
+
+while True:
+    os.system("cls") # Limpa o terminal.
+    print("""
+--- MENU DA PESQUISA ---
+1   -  Adicionar familia
+2   -  Exibir resultados
+3   -  Sair
+""")
+   
+    opcao = int(input("Digite a opção desejada: "))
+   
+    match opcao:
+        case 1:
+            print("-- CADASTRO --")
+            media = int(input("Digite sua media: "))
+            sexo = input("Digite o sexo (M/F): ").upper()
+            salario = float(input("Digite o salário: R$ "))
+           
+            maior_salario = max("salario maior_salario")
+            menor_salario = min("salario, menor_salario")
+           
+               
+            print("Pessoa adicionada com sucesso.\n")
+            time.sleep(5) # Espera 5 segundos
+           
+        case 2:
+            if contador_familias == 0:
+                print("\nNenhuma familia cadastrada ainda. \n")
+            else:
+                media_salario = soma_salario / contador_familias
+               
+                print("\n -- RESULTADOS DA PESQUISA --")
+                print(f"Média de salário da população: {media_salario:.2f}")
+                print(f"Maior salario: {maior_salario}")
+                print(f"Menor salario: {menor_salario}")
+                print(f"salário: {salario}")
+                time.sleep(5) # Espera 5 segundos
+        case 3:
+            print("\nEncerrando o programa... \n")
+            break
+        case _:
+            print("\nOpção inválida. \n")
+            time.sleep(5) # Espera 5 segundos
+
